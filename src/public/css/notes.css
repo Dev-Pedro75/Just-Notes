@@ -1,0 +1,23 @@
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-delete:hover > i {
+  color: #dc3545 !important;
+}
+
+.card {
+  min-height: 13.363rem !important;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-text {
+  min-height: 4rem;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/formPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Register - Just Notes</title>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><h2>Just Notes</h2></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/login"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="text-light btn btn-outline-primary"
+                aria-current="page"
+                target="_blank"
+                href="https://github.com/Dev-Pedro75"
+                >View on <i class="bi bi-github h5"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="form-container">
+      <div class="p-3">
+        <div
+          class="align-middle container mt-3 border rounded p-5 shadow-lg"
+          id="main-container"
+        >
+          <h1 class="text-center text-primary mb-5">Register</h1>
+          <form action="/register" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label h5">Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="username"
+                name="username"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label h5">Email</label>
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                aria-describedby="emailHelp"
+                name="email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label h5">Password</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control form-control-lg"
+                id="password"
+              />
+            </div>
+
+            <p class="text-center">
+              Already have an account? <a href="/login">Login</a>
+            </p>
+            <button type="submit" class="btn btn-lg btn-primary w-100">
+              Register
+            </button>
+          </form>
+          <% if( status.Error) {%>
+          <p class="text-center mt-3 text-danger fw-bold">
+            Fill in all information!
+          </p>
+          <% } else if(status.Exists) {%>
+          <p class="text-center mt-3 text-danger fw-bold">
+            This email has already been used!
+          </p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

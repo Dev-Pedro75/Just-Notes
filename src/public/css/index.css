@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  background-color: #444;
+}
+
+header h1 {
+  font-size: 4rem;
+  color: white;
+}
+
+header h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #999;
+}

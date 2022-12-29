@@ -1,0 +1,85 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  background-color: #444;
+}
+
+header h1 {
+  font-size: 4rem;
+  color: white;
+}
+
+header h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #999;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem 40rem;
+}
+
+form input {
+  padding: 10px;
+  height: 4rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(182, 182, 182);
+}
+
+form p {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+form p a {
+  color: rgb(28, 159, 11);
+}
+
+label {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+form button {
+  height: 4rem;
+  font-size: 1.5rem;
+  background-color: rgb(28, 159, 11);
+  border: 2px solid rgb(28, 159, 11);
+  border-radius: 0.5rem;
+  color: white;
+  transition: 0.1s;
+}
+
+form button:hover {
+  opacity: 0.5;
+  background-color: rgba(28, 159, 11, 0.2);
+  border: 2px solid rgb(28, 159, 11);
+  color: rgb(28, 159, 11);
+}
+
+#back {
+  font-size: 2rem;
+  color: #444;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+#back:hover {
+  opacity: 0.7;
+}
+
+#error {
+  color: rgb(237, 60, 10);
+}

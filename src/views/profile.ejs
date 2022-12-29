@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/avatar.css" />
+    <link rel="stylesheet" href="../public/css/profile.css" />
+
+    <title>Profile</title>
+  </head>
+  <body class="bg-light">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark list-unstyled">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="/"
+            ><h2 fw-bold>Just Notes</h2></a
+          >
+          <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="/notes"
+                  >Home</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center align-items-center">
+              <li class="nav-item dropdown list-none me-3 text-white">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  My Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-warning" href="/profile"
+                      >Edit</a
+                    >
+                  </li>
+                  <li><hr /></li>
+                  <li>
+                    <button
+                      class="dropdown-item text-danger"
+                      id="log-out-button"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <div id="avatar" class="shadow-lg">
+                <p><%= user.username.slice(0,1) %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <a
+        href="/notes"
+        class="text-secondary d-flex align-items-center ms-5 mt-5 text-decoration-none"
+        ><i class="bi bi-arrow-bar-left h2"></i><span class="h1">Back</span></a
+      >
+
+      <h1 class="text-center text-secondary mt-5">Personal information</h1>
+      <div
+        class="d-flex justify-content-center align-items-center m-5"
+        id="main-container"
+      >
+        <div id="form-container">
+          <form action="/profile" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="username"
+                placeholder="Name"
+                name="username"
+                value="<%= user.username %>"
+              />
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+              <button type="submit" class="btn btn-primary w-100 btn-lg">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../public/js/logOut.js"></script>
+  </body>
+</html>

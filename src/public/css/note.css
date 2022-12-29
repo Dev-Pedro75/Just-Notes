@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+}
+
+.ql-editor {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.delete {
+  font-size: 1.3rem;
+}
+
+.card:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.ql-editor {
+  font-size: 1rem;
+}
+
+#editor img {
+  width: 5rem;
+}
+
+.ql-toolbar {
+  background-color: #d7d7d7;
+}
+
+#title-input {
+  margin: 0 1.5rem;
+}
