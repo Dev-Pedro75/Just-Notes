@@ -10,11 +10,13 @@ const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-
 app.use("/public", express.static(path.join(__dirname, "/src/public")));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 app.use(UserRouter, NoteRouter);
+app.use((req, res) => {
+  res.status(404).render("404Page");
+});
 
 mongoose.Promise = global.Promise;
 
