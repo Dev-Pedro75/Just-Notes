@@ -13,8 +13,8 @@
 ### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
 
 ```sh
-MONGODB_PORT=(' Your mongodb url ')
-SECRET=(' Create a random secret for jwt ')
+MONGODB_PORT='Your mongodb url'
+SECRET='Create a random secret for jwt'
 ```
 
 #
