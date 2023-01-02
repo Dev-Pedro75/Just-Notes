@@ -6,7 +6,7 @@ const NoteRouter = require("./src/routes/NoteRouter");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
-const PORT = 3000;
+const PORT = 4000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());

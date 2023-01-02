@@ -137,7 +137,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form action="/note/create" method="post">
+              <form action="/note/create" method="post" id="form-note">
                 <div class="mb-3">
                   <label for="title" class="form-label h3">Title</label>
                   <input
@@ -148,6 +148,9 @@
                     placeholder="Title..."
                     name="title"
                   />
+                  <p class="text-center mt-3 text-danger fw-bold d-none" id="error-alert">
+                    The title is required!
+                  </p>
                 </div>
               </div>
               <div class="modal-footer">

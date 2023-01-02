@@ -15,12 +15,12 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <title>Login - Just Notes</title>
+    <title>Register - Just Notes</title>
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><h2 fw-bold>Just Notes</h2></a>
+        <a class="navbar-brand" href="/"><h2>Just Notes</h2></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,8 +38,8 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/register"
-                >Register</a
+              <a class="nav-link active" aria-current="page" href="/login"
+                >Login</a
               >
             </li>
             <li class="nav-item">
@@ -61,12 +61,21 @@
           class="align-middle container mt-3 border rounded p-5 shadow-lg"
           id="main-container"
         >
-          <h1 class="text-center text-primary mb-5">Login</h1>
-          <form action="/login" method="post">
+          <h1 class="text-center text-primary mb-5">Register</h1>
+          <form action="/register" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label h5">Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="username"
+                name="username"
+              />
+            </div>
             <div class="mb-3">
               <label for="email" class="form-label h5">Email</label>
               <input
-                type="text"
+                type="email"
                 class="form-control form-control-lg"
                 id="email"
                 aria-describedby="emailHelp"
@@ -82,13 +91,17 @@
                 id="password"
               />
             </div>
+
             <p class="text-center">
-              Don't have an account? <a href="/register">Register</a>
+              Already have an account? <a href="/login">Login</a>
             </p>
             <button type="submit" class="btn btn-lg btn-primary w-100">
-              Login
+              Register
             </button>
           </form>
+          <p class="text-center mt-3 text-danger fw-bold">
+            This email has already been used!
+          </p>
         </div>
       </div>
     </div>

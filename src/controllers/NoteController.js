@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 module.exports = {
   create: async (req, res) => {
     const { title } = req.body;
-    if (!title) return res.send("sem title");
 
     const newNote = new NoteModel({
       title: title,
@@ -24,13 +23,13 @@ module.exports = {
   },
   getUserToken: async (req, res) => {
     if (!req.headers.cookie) {
-      res.status(401).json({ error: "Unauthorized: No token provided" });
+      res.redirect("/login");
     } else {
       const token = req.headers.cookie.split("=")[1];
       const secret = process.env.SECRET;
       jwt.verify(token, secret, async (err, decoded) => {
         if (err) {
-          res.status(401).json({ error: "Unauthorized: token invalid" });
+          res.redirect("/login");
         } else {
           await UserModel.findOne({ email: decoded.email })
             .exec()
@@ -46,7 +45,6 @@ module.exports = {
   },
   edit: async (req, res) => {
     const { title, description } = req.body;
-    console.log(title, description, "poooooooooo");
 
     await NoteModel.updateOne(
       { _id: req.params.id },
@@ -56,7 +54,7 @@ module.exports = {
         updated_at: Date.now(),
       }
     );
-    res.status(200).json({ msg: "note edited" });
+    res.status(200).redirect("/notes");
   },
   delete: async (req, res) => {
     await NoteModel.deleteOne({ _id: req.params.id });

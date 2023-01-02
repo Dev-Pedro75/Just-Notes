@@ -112,6 +112,19 @@
               </button>
             </div>
           </form>
+          <% if( status.saved) {%>
+          <div class="container mt-5">
+            <div
+              class="alert alert-success d-flex justify-content-start align-items-center"
+              role="alert"
+            >
+              <div class="d-flex">
+                <i class="bi bi-check-circle"></i>
+                <div class="ms-2">Saved changes</div>
+              </div>
+            </div>
+          </div>
+          <% } %>
         </div>
       </div>
     </main>

@@ -4,7 +4,7 @@ const UserController = require("../controllers/UserController");
 const authToken = require("../middlewares/authToken");
 
 Router.get("/", (req, res) => {
-  res.render("index");
+  res.redirect("/login");
 });
 //Router.get("/notes", authToken.authToken, UserController.getNotes);
 Router.get("/login", UserController.getLogin);

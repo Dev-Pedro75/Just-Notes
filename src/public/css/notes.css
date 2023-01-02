@@ -21,3 +21,7 @@
 .card-text {
   min-height: 4rem;
 }
+
+#add-note-card {
+  min-height: 13.72rem !important;
+}

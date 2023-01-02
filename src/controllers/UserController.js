@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 
 async function getUser(id) {
   const user = await UserModel.findOne({ _id: id }).exec();
-
   return user;
 }
 
@@ -14,40 +13,14 @@ module.exports = {
   register: async (req, res) => {
     const { username, email, password } = req.body;
 
-    if (!email) {
-      return res.render("register", {
-        status: {
-          Error: true,
-          Exists: false,
-        },
-      });
-    }
-    if (!password) {
-      return res.render("register", {
-        status: {
-          Error: true,
-          Exists: false,
-        },
-      });
-    }
-    if (!username) {
-      return res.render("register", {
-        status: {
-          Error: true,
-          Exists: false,
-        },
-      });
+    if (!username || !email || !password) {
+      return res.render("registerError");
     }
 
     try {
       const userExists = await UserModel.findOne({ email: email }).exec();
       if (userExists) {
-        return res.render("register", {
-          status: {
-            Error: false,
-            Exists: true,
-          },
-        });
+        return res.render("registerExists");
       }
 
       const salt = await bcrypt.genSalt(15);
@@ -67,30 +40,15 @@ module.exports = {
   login: async (req, res) => {
     const { email, password } = req.body;
 
-    if (!email) {
-      return res.render("login", {
-        status: {
-          Error: true,
-        },
-      });
-    }
-    if (!password) {
-      return res.render("login", {
-        status: {
-          Error: true,
-        },
-      });
+    if (!email || !password) {
+      return res.render("loginError");
     }
 
     try {
       const user = await UserModel.findOne({ email: email }).exec();
 
       if (!user) {
-        return res.render("login", {
-          status: {
-            Error: true,
-          },
-        });
+        return res.render("loginError");
       } else {
         const checkPassword = await bcrypt.compare(password, user.password);
 
@@ -134,25 +92,22 @@ module.exports = {
       }
     );
     user = await UserModel.findOne({ _id: req.id }).exec();
-    res.render("profile", { user: user });
+    res.render("profile", {
+      user: user,
+      status: {
+        saved: true,
+      },
+    });
   },
   getLogin: async (req, res) => {
     if (!req.headers.cookie) {
-      res.render("login", {
-        status: {
-          Error: false,
-        },
-      });
+      res.render("login");
     } else {
       const token = req.headers.cookie.split("=")[1];
       const secret = process.env.SECRET;
       jwt.verify(token, secret, async (err, decoded) => {
         if (err) {
-          res.render("login", {
-            status: {
-              Error: true,
-            },
-          });
+          res.render("loginError");
         } else {
           req.email = decoded.email;
           await UserModel.findOne({ email: decoded.email })
@@ -170,38 +125,14 @@ module.exports = {
   getProfile: async (req, res) => {
     const user = await getUser(req.id);
 
-    res.render("profile", { user });
-  },
-  /* getNotes: async (req, res) => {
-    const user = await getUser(req.id);
-    let notes = await NoteModel.find().exec();
-    const formater = Intl.DateTimeFormat("en", { dateStyle: "long" });
-    notes = notes.filter((note) => note.author == req.id);
-    notes = notes.sort(function (a, b) {
-      if (a.updated_at < b.updated_at) {
-        return 1;
-      }
-      if (a.updated_at > b.updated_at) {
-        return -1;
-      }
-      return 0;
-    });
-
-    notes.forEach((note) => {
-      dateFormat = new Date(Number(note.updated_at));
-
-      note.updated_at = formater.format(dateFormat);
-    });
-
-    //res.send(notes);
-    return res.render("notes", { user: user, notes: notes });
-  }, */
-  getRegister: async (req, res) => {
-    res.render("register", {
+    res.render("profile", {
+      user,
       status: {
-        Error: false,
-        Exists: false,
+        saved: false,
       },
     });
+  },
+  getRegister: async (req, res) => {
+    res.render("register");
   },
 };

@@ -1,4 +1,7 @@
 const cards = document.querySelectorAll(".card");
+const titleInput = document.querySelector("#title");
+const formNote = document.querySelector("#form-note");
+const formErrorAlert = document.querySelector("#error-alert");
 
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
@@ -6,9 +9,10 @@ cards.forEach((card) => {
       e.target.classList[0] == "btn-delete" ||
       e.target.classList[1] == "bi-trash3-fill"
     ) {
-      console.log("lixo");
       return;
     } else if (card.id == "add-note-card") {
+      titleInput.value = "";
+      formErrorAlert.classList.add("d-none");
       return;
     }
     /* location.href = `/note/${card.id}`; */
@@ -23,3 +27,10 @@ async function deleteNote(id) {
     location.reload();
   });
 }
+
+formNote.addEventListener("submit", (e) => {
+  if (titleInput.value) return;
+
+  e.preventDefault();
+  formErrorAlert.classList.remove("d-none");
+});
