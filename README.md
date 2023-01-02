@@ -16,6 +16,10 @@
 MONGODB_PORT='Your mongodb url'
 SECRET='Create a random secret for jwt'
 ```
+### after
+```sh
+yarn install or npm install
+```
 
 #
 
@@ -31,7 +35,7 @@ yarn start
 npm start
 ```
 
-### Then, open <a href='http://localhost:4000/'> localhost:4000</a> in browser
+### Then, open <a href='http://localhost:4000/'>http://localhost:4000/</a> in browser
 
 #
 
