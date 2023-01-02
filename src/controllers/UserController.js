@@ -107,7 +107,7 @@ module.exports = {
       const secret = process.env.SECRET;
       jwt.verify(token, secret, async (err, decoded) => {
         if (err) {
-          res.render("loginError");
+          res.render("login");
         } else {
           req.email = decoded.email;
           await UserModel.findOne({ email: decoded.email })
