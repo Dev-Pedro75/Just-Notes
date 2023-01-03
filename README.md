@@ -31,7 +31,6 @@
 
 # Get Started
 
-<<<<<<< HEAD
 <a id="tools"></a>
 
 ### Necessary tools
@@ -43,15 +42,14 @@
 #
 
 ### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
-=======
-#### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
->>>>>>> fd70551a9ed344e87a3c0be182d9469b82af2673
 
 ```sh
 MONGODB_PORT='Your mongodb url'
 SECRET='Create a random secret for jwt'
 ```
+
 ### after
+
 ```sh
 yarn install or npm install
 ```
@@ -60,11 +58,7 @@ yarn install or npm install
 
 #
 
-<<<<<<< HEAD
 ### To start the project, run :
-=======
-# To start the project, run :
->>>>>>> fd70551a9ed344e87a3c0be182d9469b82af2673
 
 ```sh
 yarn start
