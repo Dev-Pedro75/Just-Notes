@@ -1,7 +1,5 @@
 <h1 align='center'>Just Notes</h1>
 
-<h2 align='center'>About</h2>
-
 <h3 align='center'>A simple notes app, similar to google docs and evernote</h3>
 
 <img a src='./src/public/img/justnotes.gif'>
@@ -33,6 +31,7 @@
 
 # Get Started
 
+<<<<<<< HEAD
 <a id="tools"></a>
 
 ### Necessary tools
@@ -44,17 +43,28 @@
 #
 
 ### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
+=======
+#### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
+>>>>>>> fd70551a9ed344e87a3c0be182d9469b82af2673
 
 ```sh
-MONGODB_PORT=(' Your mongodb url ')
-SECRET=(' Create a random secret for jwt ')
+MONGODB_PORT='Your mongodb url'
+SECRET='Create a random secret for jwt'
+```
+### after
+```sh
+yarn install or npm install
 ```
 
 <a id="run"></a>
 
 #
 
+<<<<<<< HEAD
 ### To start the project, run :
+=======
+# To start the project, run :
+>>>>>>> fd70551a9ed344e87a3c0be182d9469b82af2673
 
 ```sh
 yarn start
@@ -66,7 +76,7 @@ yarn start
 npm start
 ```
 
-### Then, open <a href='http://localhost:4000/'> localhost:4000</a> in browser
+### Then, open <a href='http://localhost:4000/'>http://localhost:4000/</a> in browser
 
 <a id="features"></a>
 
@@ -76,7 +86,7 @@ npm start
 
 # Features
 
-## Screen responsiveness
+### Screen responsiveness
 
 <img src='./src/public/img/responsiveness.gif'>
 
@@ -84,7 +94,7 @@ npm start
 
 #
 
-## Authentication and Logout
+### Authentication and Logout
 
 <img src='./src/public/img/auth.gif'>
 
@@ -92,7 +102,7 @@ npm start
 
 #
 
-## 🚀 Technologies
+# 🚀 Technologies
 
 <ul>
     <li>nodejs</li>
