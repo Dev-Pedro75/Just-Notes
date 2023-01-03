@@ -1,7 +1,5 @@
 <h1 align='center'>Just Notes</h1>
 
-<h2 align='center'>About</h2>
-
 <h3 align='center'>A simple notes app, similar to google docs and evernote</h3>
 
 <img src='./src/public/img/justnotes.gif'>
@@ -10,7 +8,7 @@
 
 # Get Started
 
-### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
+#### before starting the project you need to create an <a href='https://www.npmjs.com/package/dotenv'>.env</a> file and change the variables
 
 ```sh
 MONGODB_PORT='Your mongodb url'
@@ -23,7 +21,7 @@ yarn install or npm install
 
 #
 
-## To start the project, run :
+# To start the project, run :
 
 ```sh
 yarn start
@@ -41,19 +39,19 @@ npm start
 
 # Features
 
-## Screen responsiveness
+### Screen responsiveness
 
 <img src='./src/public/img/responsiveness.gif'>
 
 #
 
-## Authentication and Logout
+### Authentication and Logout
 
 <img src='./src/public/img/auth.gif'>
 
 #
 
-## 🚀 Technologies
+# 🚀 Technologies
 
 <ul>
     <li>nodejs</li>
